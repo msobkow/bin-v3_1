@@ -1,0 +1,11 @@
+#!/bin/bash
+dirlist=$*
+declare -i linetotal=0
+declare -i linecount=0
+for afile in `find ${dirlist} -name '*.xml' -o -name '*.xsd' -o -name '*.java'`
+do
+	linecount=`wc -l "$afile" | cut -d ' ' -f 1`
+	linetotal=$((linetotal+${linecount}))
+	echo $afile $linecount
+done
+echo "TOTAL LINES: " $linetotal
