@@ -870,6 +870,18 @@
 			<TSecGroup Name="DeleteInt64Type" IsVisible="false" >
 				<TSecGroupInclude SubGroup="CFBamDeleter" />
 			</TSecGroup>
+			<TSecGroup Name="ReadLicense" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFIntReader" />
+			</TSecGroup>
+			<TSecGroup Name="CreateLicense" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFIntCreator" />
+			</TSecGroup>
+			<TSecGroup Name="UpdateLicense" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFIntUpdater" />
+			</TSecGroup>
+			<TSecGroup Name="DeleteLicense" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFIntDeleter" />
+			</TSecGroup>
 			<TSecGroup Name="ReadMajorVersion" IsVisible="false" >
 				<TSecGroupInclude SubGroup="CFIntReader" />
 			</TSecGroup>
