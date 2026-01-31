@@ -4,6 +4,7 @@ for aprojdir in \
 	io.github.msobkow.v3_1.cfbam.cfbamcustfx \
 	io.github.msobkow.v3_1.cfbam.cfbamjavafx \
 	io.github.msobkow.v3_1.cfbam.cfbamsaxramldr \
+	io.github.msobkow.v3_1.cfbam.cfbamramtest \
 	io.github.msobkow.v3_1.cfbam.cfbamram \
 	io.github.msobkow.v3_1.cfbam.cfbamsaxloader \
 	io.github.msobkow.v3_1.cfbam.cfbamjpatest \
@@ -14,6 +15,7 @@ for aprojdir in \
 	io.github.msobkow.v3_1.cfint.cfintcustfx \
 	io.github.msobkow.v3_1.cfint.cfintjavafx \
 	io.github.msobkow.v3_1.cfint.cfintsaxramldr \
+	io.github.msobkow.v3_1.cfint.cfintramtest \
 	io.github.msobkow.v3_1.cfint.cfintram \
 	io.github.msobkow.v3_1.cfint.cfintsaxloader \
 	io.github.msobkow.v3_1.cfint.cfintjpatest \
@@ -24,6 +26,7 @@ for aprojdir in \
 	io.github.msobkow.v3_1.cfsec.cfseccustfx \
 	io.github.msobkow.v3_1.cfsec.cfsecjavafx \
 	io.github.msobkow.v3_1.cfsec.cfsecsaxramldr \
+	io.github.msobkow.v3_1.cfsec.cfsecramtest \
 	io.github.msobkow.v3_1.cfsec.cfsecram \
 	io.github.msobkow.v3_1.cfsec.cfsecsaxloader \
 	io.github.msobkow.v3_1.cfsec.cfsecjpatest \
