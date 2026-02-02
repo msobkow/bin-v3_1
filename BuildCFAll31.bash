@@ -21,6 +21,7 @@ for aprojdir in \
 	io.github.msobkow.v3_1.cfsec.cfsecjavafx \
 	io.github.msobkow.v3_1.cfsec.cfseccustfx \
 	io.github.msobkow.v3_1.cfsec.cfsecram \
+	io.github.msobkow.v3_1.cfsec.cfsecramtest \
 	\
 	io.github.msobkow.v3_1.cfint.cfint \
 	io.github.msobkow.v3_1.cfint.cfintbuff \
@@ -30,6 +31,7 @@ for aprojdir in \
 	io.github.msobkow.v3_1.cfint.cfintjavafx \
 	io.github.msobkow.v3_1.cfint.cfintcustfx \
 	io.github.msobkow.v3_1.cfint.cfintram \
+	io.github.msobkow.v3_1.cfint.cfintramtest \
 	\
 	io.github.msobkow.v3_1.cfbam.cfbam \
 	io.github.msobkow.v3_1.cfbam.cfbambuff \
@@ -38,7 +40,8 @@ for aprojdir in \
 	io.github.msobkow.v3_1.cfbam.cfbamsaxloader \
 	io.github.msobkow.v3_1.cfbam.cfbamjavafx \
 	io.github.msobkow.v3_1.cfbam.cfbamcustfx \
-	io.github.msobkow.v3_1.cfbam.cfbamram
+	io.github.msobkow.v3_1.cfbam.cfbamram \
+	io.github.msobkow.v3_1.cfbam.cfbamramtest
 do
 	if [ $MavenStatus == 0 ]; then
 		if [ -a ${aprojdir}/pom.xml ]; then
@@ -63,6 +66,7 @@ if [ $MavenStatus == 0 ]; then
 	cp -v $HOME/.m2/repository/io/github/msobkow/v3_1/io.github.msobkow.v3_1.cfsec.cfsecjpatest/3.1/io.github.msobkow.v3_1.cfsec.cfsecjpatest-3.1.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/io/github/msobkow/v3_1/io.github.msobkow.v3_1.cfsec.cfsecsaxloader/3.1/io.github.msobkow.v3_1.cfsec.cfsecsaxloader-3.1.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/io/github/msobkow/v3_1/io.github.msobkow.v3_1.cfsec.cfsecram/3.1/io.github.msobkow.v3_1.cfsec.cfsecram-3.1.jar $MCF_HOME/bin-v3_1
+	cp -v $HOME/.m2/repository/io/github/msobkow/v3_1/io.github.msobkow.v3_1.cfsec.cfsecramtest/3.1/io.github.msobkow.v3_1.cfsec.cfsecramtest-3.1.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/io/github/msobkow/v3_1/io.github.msobkow.v3_1.cfsec.cfsecsaxramldr/3.1/io.github.msobkow.v3_1.cfsec.cfsecsaxramldr-3.1.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/io/github/msobkow/v3_1/io.github.msobkow.v3_1.cfsec.cfsecjavafx/3.1/io.github.msobkow.v3_1.cfsec.cfsecjavafx-3.1.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/io/github/msobkow/v3_1/io.github.msobkow.v3_1.cfsec.cfseccustfx/3.1/io.github.msobkow.v3_1.cfsec.cfseccustfx-3.1.jar $MCF_HOME/bin-v3_1
@@ -72,6 +76,7 @@ if [ $MavenStatus == 0 ]; then
 	cp -v $HOME/.m2/repository/io/github/msobkow/v3_1/io.github.msobkow.v3_1.cfint.cfintjpatest/3.1/io.github.msobkow.v3_1.cfint.cfintjpatest-3.1.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/io/github/msobkow/v3_1/io.github.msobkow.v3_1.cfint.cfintsaxloader/3.1/io.github.msobkow.v3_1.cfint.cfintsaxloader-3.1.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/io/github/msobkow/v3_1/io.github.msobkow.v3_1.cfint.cfintram/3.1/io.github.msobkow.v3_1.cfint.cfintram-3.1.jar $MCF_HOME/bin-v3_1
+	cp -v $HOME/.m2/repository/io/github/msobkow/v3_1/io.github.msobkow.v3_1.cfint.cfintramtest/3.1/io.github.msobkow.v3_1.cfint.cfintramtest-3.1.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/io/github/msobkow/v3_1/io.github.msobkow.v3_1.cfint.cfintsaxramldr/3.1/io.github.msobkow.v3_1.cfint.cfintsaxramldr-3.1.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/io/github/msobkow/v3_1/io.github.msobkow.v3_1.cfint.cfintjavafx/3.1/io.github.msobkow.v3_1.cfint.cfintjavafx-3.1.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/io/github/msobkow/v3_1/io.github.msobkow.v3_1.cfint.cfintcustfx/3.1/io.github.msobkow.v3_1.cfint.cfintcustfx-3.1.jar $MCF_HOME/bin-v3_1
@@ -81,6 +86,7 @@ if [ $MavenStatus == 0 ]; then
 	cp -v $HOME/.m2/repository/io/github/msobkow/v3_1/io.github.msobkow.v3_1.cfbam.cfbamjpatest/3.1/io.github.msobkow.v3_1.cfbam.cfbamjpatest-3.1.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/io/github/msobkow/v3_1/io.github.msobkow.v3_1.cfbam.cfbamsaxloader/3.1/io.github.msobkow.v3_1.cfbam.cfbamsaxloader-3.1.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/io/github/msobkow/v3_1/io.github.msobkow.v3_1.cfbam.cfbamram/3.1/io.github.msobkow.v3_1.cfbam.cfbamram-3.1.jar $MCF_HOME/bin-v3_1
+	cp -v $HOME/.m2/repository/io/github/msobkow/v3_1/io.github.msobkow.v3_1.cfbam.cfbamramtest/3.1/io.github.msobkow.v3_1.cfbam.cfbamramtest-3.1.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/io/github/msobkow/v3_1/io.github.msobkow.v3_1.cfbam.cfbamsaxramldr/3.1/io.github.msobkow.v3_1.cfbam.cfbamsaxramldr-3.1.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/io/github/msobkow/v3_1/io.github.msobkow.v3_1.cfbam.cfbamjavafx/3.1/io.github.msobkow.v3_1.cfbam.cfbamjavafx-3.1.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/io/github/msobkow/v3_1/io.github.msobkow.v3_1.cfbam.cfbamcustfx/3.1/io.github.msobkow.v3_1.cfbam.cfbamcustfx-3.1.jar $MCF_HOME/bin-v3_1
