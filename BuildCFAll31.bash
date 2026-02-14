@@ -90,6 +90,7 @@ if [ $MavenStatus == 0 ]; then
 	cp -v $HOME/.m2/repository/io/github/msobkow/v3_1/io.github.msobkow.v3_1.cfbam.cfbamsaxramldr/3.1/io.github.msobkow.v3_1.cfbam.cfbamsaxramldr-3.1.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/io/github/msobkow/v3_1/io.github.msobkow.v3_1.cfbam.cfbamjavafx/3.1/io.github.msobkow.v3_1.cfbam.cfbamjavafx-3.1.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/io/github/msobkow/v3_1/io.github.msobkow.v3_1.cfbam.cfbamcustfx/3.1/io.github.msobkow.v3_1.cfbam.cfbamcustfx-3.1.jar $MCF_HOME/bin-v3_1
+	cp -v $MCF_HOME/io.github.msobkow.v3_1.*/target/*-spring-boot.jar $MCF_HOME/bin-v3_1
 	echo "SUCCESS: All 3.1 Java builds completed successfully"
 fi
 popd
