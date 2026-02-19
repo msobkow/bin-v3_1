@@ -43,19 +43,19 @@ for aprojdir in \
 	io.github.msobkow.v3_1.cfbam.cfbamram \
 	io.github.msobkow.v3_1.cfbam.cfbamramtest
 do
-	if [ $MavenStatus == 0 ]; then
+	if [ "$MavenStatus" == "0" ]; then
 		if [ -a ${aprojdir}/pom.xml ]; then
 			pushd ${aprojdir}
 				mvn -U install
 				let MavenStatus=$?
-				if [ $MavenStatus != 0 ]; then
+				if [ "$MavenStatus" != "0" ]; then
 					echo "ERROR: mvn install for ${aprojdir} returned status ${MavenStatus} - build aborted"
 				fi
 			popd
 		fi
 	fi
 done
-if [ $MavenStatus == 0 ]; then
+if [ "$MavenStatus" != "0" ]; then
 	cp -v $HOME/.m2/repository/io/github/msobkow/v3_1/io.github.msobkow.v3_1.cflib/3.1/io.github.msobkow.v3_1.cflib-3.1.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/io/github/msobkow/v3_1/io.github.msobkow.v3_1.cflib.dbutil/3.1/io.github.msobkow.v3_1.cflib.dbutil-3.1.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/io/github/msobkow/v3_1/io.github.msobkow.v3_1.cflib.dbtest/3.1/io.github.msobkow.v3_1.cflib.dbtest-3.1.jar $MCF_HOME/bin-v3_1
