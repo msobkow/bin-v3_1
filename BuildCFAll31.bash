@@ -55,7 +55,7 @@ do
 		fi
 	fi
 done
-if [ "$MavenStatus" != "0" ]; then
+if [ "$MavenStatus" == "0" ]; then
 	cp -v $HOME/.m2/repository/io/github/msobkow/v3_1/io.github.msobkow.v3_1.cflib/3.1/io.github.msobkow.v3_1.cflib-3.1.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/io/github/msobkow/v3_1/io.github.msobkow.v3_1.cflib.dbutil/3.1/io.github.msobkow.v3_1.cflib.dbutil-3.1.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/io/github/msobkow/v3_1/io.github.msobkow.v3_1.cflib.dbtest/3.1/io.github.msobkow.v3_1.cflib.dbtest-3.1.jar $MCF_HOME/bin-v3_1
