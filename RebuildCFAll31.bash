@@ -1,8 +1,12 @@
 #!/bin/bash
+export CLIARGS="$*"
+if [ "$CLIARGS" == "" ]; then
+	export CLIARGS="42"
+fi
 clear
-ManufactureCFSec31Java.bash 42
-ManufactureCFInt31Java.bash 42
-ManufactureCFBam31Java.bash 42
+ManufactureCFSec31Java.bash $CLIARGS
+ManufactureCFInt31Java.bash $CLIARGS
+ManufactureCFBam31Java.bash $CLIARGS
 CleanCFAll31.bash
 clear;
-time BuildCFAll31.bash
+time BuildCFAll31.bash $CLIARGS

@@ -1,4 +1,8 @@
 #!/bin/bash
+export CLIARGS="$*"
+if [ "$CLIARGS" == "" ]; then
+	export CLIARGS="42"
+fi
 pushd $MCF_HOME
 let MavenStatus=0
 #	io.github.msobkow.v3_1.cfsec.cfsecsaxramldr \
@@ -46,10 +50,10 @@ do
 	if [ "$MavenStatus" == "0" ]; then
 		if [ -a ${aprojdir}/pom.xml ]; then
 			pushd ${aprojdir}
-				mvn -U deploy
+				mvn -DbuildString="$CLIARGS" -U deploy
 				let MavenStatus=$?
 				if [ "$MavenStatus" != "0" ]; then
-					echo "ERROR: mvn deploy for ${aprojdir} returned status ${MavenStatus} - build aborted"
+					echo "ERROR: mvn deploy -DbuildString=\"$CLIARGS\" for ${aprojdir} returned status ${MavenStatus} - build aborted"
 				fi
 			popd
 		fi
