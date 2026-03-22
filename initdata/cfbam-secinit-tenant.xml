@@ -1146,6 +1146,42 @@
 			<TSecGroup Name="DeleteScope" IsVisible="false" >
 				<TSecGroupInclude SubGroup="CFBamDeleter" />
 			</TSecGroup>
+			<TSecGroup Name="ReadSecTentGrp" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFSecReader" />
+			</TSecGroup>
+			<TSecGroup Name="CreateSecTentGrp" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFSecCreator" />
+			</TSecGroup>
+			<TSecGroup Name="UpdateSecTentGrp" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFSecUpdater" />
+			</TSecGroup>
+			<TSecGroup Name="DeleteSecTentGrp" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFSecDeleter" />
+			</TSecGroup>
+			<TSecGroup Name="ReadSecTentGrpInc" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFSecReader" />
+			</TSecGroup>
+			<TSecGroup Name="CreateSecTentGrpInc" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFSecCreator" />
+			</TSecGroup>
+			<TSecGroup Name="UpdateSecTentGrpInc" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFSecUpdater" />
+			</TSecGroup>
+			<TSecGroup Name="DeleteSecTentGrpInc" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFSecDeleter" />
+			</TSecGroup>
+			<TSecGroup Name="ReadSecTentGrpMemb" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFSecReader" />
+			</TSecGroup>
+			<TSecGroup Name="CreateSecTentGrpMemb" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFSecCreator" />
+			</TSecGroup>
+			<TSecGroup Name="UpdateSecTentGrpMemb" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFSecUpdater" />
+			</TSecGroup>
+			<TSecGroup Name="DeleteSecTentGrpMemb" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFSecDeleter" />
+			</TSecGroup>
 			<TSecGroup Name="ReadServerListFunc" IsVisible="false" >
 				<TSecGroupInclude SubGroup="CFBamReader" />
 			</TSecGroup>
@@ -1241,42 +1277,6 @@
 			</TSecGroup>
 			<TSecGroup Name="DeleteSubProject" IsVisible="false" >
 				<TSecGroupInclude SubGroup="CFIntDeleter" />
-			</TSecGroup>
-			<TSecGroup Name="ReadTSecGroup" IsVisible="false" >
-				<TSecGroupInclude SubGroup="CFSecReader" />
-			</TSecGroup>
-			<TSecGroup Name="CreateTSecGroup" IsVisible="false" >
-				<TSecGroupInclude SubGroup="CFSecCreator" />
-			</TSecGroup>
-			<TSecGroup Name="UpdateTSecGroup" IsVisible="false" >
-				<TSecGroupInclude SubGroup="CFSecUpdater" />
-			</TSecGroup>
-			<TSecGroup Name="DeleteTSecGroup" IsVisible="false" >
-				<TSecGroupInclude SubGroup="CFSecDeleter" />
-			</TSecGroup>
-			<TSecGroup Name="ReadTSecGrpInc" IsVisible="false" >
-				<TSecGroupInclude SubGroup="CFSecReader" />
-			</TSecGroup>
-			<TSecGroup Name="CreateTSecGrpInc" IsVisible="false" >
-				<TSecGroupInclude SubGroup="CFSecCreator" />
-			</TSecGroup>
-			<TSecGroup Name="UpdateTSecGrpInc" IsVisible="false" >
-				<TSecGroupInclude SubGroup="CFSecUpdater" />
-			</TSecGroup>
-			<TSecGroup Name="DeleteTSecGrpInc" IsVisible="false" >
-				<TSecGroupInclude SubGroup="CFSecDeleter" />
-			</TSecGroup>
-			<TSecGroup Name="ReadTSecGrpMemb" IsVisible="false" >
-				<TSecGroupInclude SubGroup="CFSecReader" />
-			</TSecGroup>
-			<TSecGroup Name="CreateTSecGrpMemb" IsVisible="false" >
-				<TSecGroupInclude SubGroup="CFSecCreator" />
-			</TSecGroup>
-			<TSecGroup Name="UpdateTSecGrpMemb" IsVisible="false" >
-				<TSecGroupInclude SubGroup="CFSecUpdater" />
-			</TSecGroup>
-			<TSecGroup Name="DeleteTSecGrpMemb" IsVisible="false" >
-				<TSecGroupInclude SubGroup="CFSecDeleter" />
 			</TSecGroup>
 			<TSecGroup Name="ReadTZDateCol" IsVisible="false" >
 				<TSecGroupInclude SubGroup="CFBamReader" />

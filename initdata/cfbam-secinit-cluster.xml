@@ -53,64 +53,52 @@
 		<SecGroup Name="CFIntDeleter" IsVisible="true">
 			<SecGroupInclude SubGroup="CFIntAdmin" />
 		</SecGroup>
-		<SecGroup Name="ReadHostNode" IsVisible="false" >
+		<SecGroup Name="ReadSecClusGrp" IsVisible="false" >
 			<SecGroupInclude SubGroup="CFSecReader" />
 		</SecGroup>
-		<SecGroup Name="CreateHostNode" IsVisible="false" >
+		<SecGroup Name="CreateSecClusGrp" IsVisible="false" >
 			<SecGroupInclude SubGroup="CFSecCreator" />
 		</SecGroup>
-		<SecGroup Name="UpdateHostNode" IsVisible="false" >
+		<SecGroup Name="UpdateSecClusGrp" IsVisible="false" >
 			<SecGroupInclude SubGroup="CFSecUpdater" />
 		</SecGroup>
-		<SecGroup Name="DeleteHostNode" IsVisible="false" >
+		<SecGroup Name="DeleteSecClusGrp" IsVisible="false" >
 			<SecGroupInclude SubGroup="CFSecDeleter" />
 		</SecGroup>
-		<SecGroup Name="ReadSecGroup" IsVisible="false" >
+		<SecGroup Name="ReadSecClusGrpInc" IsVisible="false" >
 			<SecGroupInclude SubGroup="CFSecReader" />
 		</SecGroup>
-		<SecGroup Name="CreateSecGroup" IsVisible="false" >
+		<SecGroup Name="CreateSecClusGrpInc" IsVisible="false" >
 			<SecGroupInclude SubGroup="CFSecCreator" />
 		</SecGroup>
-		<SecGroup Name="UpdateSecGroup" IsVisible="false" >
+		<SecGroup Name="UpdateSecClusGrpInc" IsVisible="false" >
 			<SecGroupInclude SubGroup="CFSecUpdater" />
 		</SecGroup>
-		<SecGroup Name="DeleteSecGroup" IsVisible="false" >
+		<SecGroup Name="DeleteSecClusGrpInc" IsVisible="false" >
 			<SecGroupInclude SubGroup="CFSecDeleter" />
 		</SecGroup>
-		<SecGroup Name="ReadSecGrpInc" IsVisible="false" >
+		<SecGroup Name="ReadSecClusGrpMemb" IsVisible="false" >
 			<SecGroupInclude SubGroup="CFSecReader" />
 		</SecGroup>
-		<SecGroup Name="CreateSecGrpInc" IsVisible="false" >
+		<SecGroup Name="CreateSecClusGrpMemb" IsVisible="false" >
 			<SecGroupInclude SubGroup="CFSecCreator" />
 		</SecGroup>
-		<SecGroup Name="UpdateSecGrpInc" IsVisible="false" >
+		<SecGroup Name="UpdateSecClusGrpMemb" IsVisible="false" >
 			<SecGroupInclude SubGroup="CFSecUpdater" />
 		</SecGroup>
-		<SecGroup Name="DeleteSecGrpInc" IsVisible="false" >
+		<SecGroup Name="DeleteSecClusGrpMemb" IsVisible="false" >
 			<SecGroupInclude SubGroup="CFSecDeleter" />
 		</SecGroup>
-		<SecGroup Name="ReadSecGrpMemb" IsVisible="false" >
+		<SecGroup Name="ReadSecSysGrpMemb" IsVisible="false" >
 			<SecGroupInclude SubGroup="CFSecReader" />
 		</SecGroup>
-		<SecGroup Name="CreateSecGrpMemb" IsVisible="false" >
+		<SecGroup Name="CreateSecSysGrpMemb" IsVisible="false" >
 			<SecGroupInclude SubGroup="CFSecCreator" />
 		</SecGroup>
-		<SecGroup Name="UpdateSecGrpMemb" IsVisible="false" >
+		<SecGroup Name="UpdateSecSysGrpMemb" IsVisible="false" >
 			<SecGroupInclude SubGroup="CFSecUpdater" />
 		</SecGroup>
-		<SecGroup Name="DeleteSecGrpMemb" IsVisible="false" >
-			<SecGroupInclude SubGroup="CFSecDeleter" />
-		</SecGroup>
-		<SecGroup Name="ReadService" IsVisible="false" >
-			<SecGroupInclude SubGroup="CFSecReader" />
-		</SecGroup>
-		<SecGroup Name="CreateService" IsVisible="false" >
-			<SecGroupInclude SubGroup="CFSecCreator" />
-		</SecGroup>
-		<SecGroup Name="UpdateService" IsVisible="false" >
-			<SecGroupInclude SubGroup="CFSecUpdater" />
-		</SecGroup>
-		<SecGroup Name="DeleteService" IsVisible="false" >
+		<SecGroup Name="DeleteSecSysGrpMemb" IsVisible="false" >
 			<SecGroupInclude SubGroup="CFSecDeleter" />
 		</SecGroup>
 	</Cluster>

@@ -24,40 +24,40 @@
 			<TSecGroup Name="CFSecDeleter" IsVisible="true" >
 				<TSecGroupInclude SubGroup="CFSecAdmin" />
 			</TSecGroup>
-			<TSecGroup Name="ReadTSecGroup" IsVisible="false" >
+			<TSecGroup Name="ReadSecTentGrp" IsVisible="false" >
 				<TSecGroupInclude SubGroup="CFSecReader" />
 			</TSecGroup>
-			<TSecGroup Name="CreateTSecGroup" IsVisible="false" >
+			<TSecGroup Name="CreateSecTentGrp" IsVisible="false" >
 				<TSecGroupInclude SubGroup="CFSecCreator" />
 			</TSecGroup>
-			<TSecGroup Name="UpdateTSecGroup" IsVisible="false" >
+			<TSecGroup Name="UpdateSecTentGrp" IsVisible="false" >
 				<TSecGroupInclude SubGroup="CFSecUpdater" />
 			</TSecGroup>
-			<TSecGroup Name="DeleteTSecGroup" IsVisible="false" >
+			<TSecGroup Name="DeleteSecTentGrp" IsVisible="false" >
 				<TSecGroupInclude SubGroup="CFSecDeleter" />
 			</TSecGroup>
-			<TSecGroup Name="ReadTSecGrpInc" IsVisible="false" >
+			<TSecGroup Name="ReadSecTentGrpInc" IsVisible="false" >
 				<TSecGroupInclude SubGroup="CFSecReader" />
 			</TSecGroup>
-			<TSecGroup Name="CreateTSecGrpInc" IsVisible="false" >
+			<TSecGroup Name="CreateSecTentGrpInc" IsVisible="false" >
 				<TSecGroupInclude SubGroup="CFSecCreator" />
 			</TSecGroup>
-			<TSecGroup Name="UpdateTSecGrpInc" IsVisible="false" >
+			<TSecGroup Name="UpdateSecTentGrpInc" IsVisible="false" >
 				<TSecGroupInclude SubGroup="CFSecUpdater" />
 			</TSecGroup>
-			<TSecGroup Name="DeleteTSecGrpInc" IsVisible="false" >
+			<TSecGroup Name="DeleteSecTentGrpInc" IsVisible="false" >
 				<TSecGroupInclude SubGroup="CFSecDeleter" />
 			</TSecGroup>
-			<TSecGroup Name="ReadTSecGrpMemb" IsVisible="false" >
+			<TSecGroup Name="ReadSecTentGrpMemb" IsVisible="false" >
 				<TSecGroupInclude SubGroup="CFSecReader" />
 			</TSecGroup>
-			<TSecGroup Name="CreateTSecGrpMemb" IsVisible="false" >
+			<TSecGroup Name="CreateSecTentGrpMemb" IsVisible="false" >
 				<TSecGroupInclude SubGroup="CFSecCreator" />
 			</TSecGroup>
-			<TSecGroup Name="UpdateTSecGrpMemb" IsVisible="false" >
+			<TSecGroup Name="UpdateSecTentGrpMemb" IsVisible="false" >
 				<TSecGroupInclude SubGroup="CFSecUpdater" />
 			</TSecGroup>
-			<TSecGroup Name="DeleteTSecGrpMemb" IsVisible="false" >
+			<TSecGroup Name="DeleteSecTentGrpMemb" IsVisible="false" >
 				<TSecGroupInclude SubGroup="CFSecDeleter" />
 			</TSecGroup>
 		</Tenant>
