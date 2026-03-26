@@ -8,6 +8,9 @@ let MavenStatus=0
 #	server.markhome.mcf.v3_1.cfsec.cfsecsaxramldr \
 #	server.markhome.mcf.v3_1.cfint.cfintsaxramldr \
 #	server.markhome.mcf.v3_1.cfbam.cfbamsaxramldr
+#	server.markhome.mcf.v3_1.cfsec.cfseccustfx \
+#	server.markhome.mcf.v3_1.cfint.cfintcustfx \
+#	server.markhome.mcf.v3_1.cfbam.cfbamcustfx \
 for aprojdir in \
 	server.markhome.mcf \
 	server.markhome.mcf.v3_1 \
@@ -23,7 +26,6 @@ for aprojdir in \
 	server.markhome.mcf.v3_1.cfsec.cfsecjpatest \
 	server.markhome.mcf.v3_1.cfsec.cfsecsaxloader \
 	server.markhome.mcf.v3_1.cfsec.cfsecjavafx \
-	server.markhome.mcf.v3_1.cfsec.cfseccustfx \
 	server.markhome.mcf.v3_1.cfsec.cfsecram \
 	server.markhome.mcf.v3_1.cfsec.cfsecramtest \
 	\
@@ -33,7 +35,6 @@ for aprojdir in \
 	server.markhome.mcf.v3_1.cfint.cfintjpatest \
 	server.markhome.mcf.v3_1.cfint.cfintsaxloader \
 	server.markhome.mcf.v3_1.cfint.cfintjavafx \
-	server.markhome.mcf.v3_1.cfint.cfintcustfx \
 	server.markhome.mcf.v3_1.cfint.cfintram \
 	server.markhome.mcf.v3_1.cfint.cfintramtest \
 	\
@@ -43,7 +44,6 @@ for aprojdir in \
 	server.markhome.mcf.v3_1.cfbam.cfbamjpatest \
 	server.markhome.mcf.v3_1.cfbam.cfbamsaxloader \
 	server.markhome.mcf.v3_1.cfbam.cfbamjavafx \
-	server.markhome.mcf.v3_1.cfbam.cfbamcustfx \
 	server.markhome.mcf.v3_1.cfbam.cfbamram \
 	server.markhome.mcf.v3_1.cfbam.cfbamramtest
 do

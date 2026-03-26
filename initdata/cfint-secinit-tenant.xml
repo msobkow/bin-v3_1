@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CFSec
-		xmlns="uri://cfsec/cfsecloader"
+		xmlns="http://mcf.markhome.server/mcf/v3_1/xsd/cfint-structured.xsd"
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		xmlns:xs="http://www.w3.org/2001/XMLSchema"
-		xsi:schemaLocation="uri://cfsec/cfsecloader file:/opt/$refernce ParentMajVer reference ParentSPrj reference ParentTPrj Name$/3.0.1/cfsec-structured.xsd" >
+		xsi:schemaLocation="http://mcf.markhome.server/mcf/v3_1/xsd/cfint-structured.xsd http://mcf.markhome.server/mcf/v3_1/xsd/cfint-structured.xsd" >
 	<Cluster FullDomName="system" Description="system">
 		<Tenant TenantName="tenant">
 			<TSecGroup Name="TenantAdmin" IsVisible="true" >
