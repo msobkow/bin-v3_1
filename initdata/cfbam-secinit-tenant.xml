@@ -1134,6 +1134,18 @@
 			<TSecGroup Name="DeleteSchemaRef" IsVisible="false" >
 				<TSecGroupInclude SubGroup="CFBamDeleter" />
 			</TSecGroup>
+			<TSecGroup Name="ReadSchemaTweak" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFBamReader" />
+			</TSecGroup>
+			<TSecGroup Name="CreateSchemaTweak" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFBamCreator" />
+			</TSecGroup>
+			<TSecGroup Name="UpdateSchemaTweak" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFBamUpdater" />
+			</TSecGroup>
+			<TSecGroup Name="DeleteSchemaTweak" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFBamDeleter" />
+			</TSecGroup>
 			<TSecGroup Name="ReadScope" IsVisible="false" >
 				<TSecGroupInclude SubGroup="CFBamReader" />
 			</TSecGroup>
@@ -1410,6 +1422,18 @@
 			<TSecGroup Name="DeleteTableCol" IsVisible="false" >
 				<TSecGroupInclude SubGroup="CFBamDeleter" />
 			</TSecGroup>
+			<TSecGroup Name="ReadTableTweak" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFBamReader" />
+			</TSecGroup>
+			<TSecGroup Name="CreateTableTweak" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFBamCreator" />
+			</TSecGroup>
+			<TSecGroup Name="UpdateTableTweak" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFBamUpdater" />
+			</TSecGroup>
+			<TSecGroup Name="DeleteTableTweak" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFBamDeleter" />
+			</TSecGroup>
 			<TSecGroup Name="ReadTextCol" IsVisible="false" >
 				<TSecGroupInclude SubGroup="CFBamReader" />
 			</TSecGroup>
@@ -1589,6 +1613,18 @@
 			</TSecGroup>
 			<TSecGroup Name="DeleteTopProject" IsVisible="false" >
 				<TSecGroupInclude SubGroup="CFIntDeleter" />
+			</TSecGroup>
+			<TSecGroup Name="ReadTweak" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFBamReader" />
+			</TSecGroup>
+			<TSecGroup Name="CreateTweak" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFBamCreator" />
+			</TSecGroup>
+			<TSecGroup Name="UpdateTweak" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFBamUpdater" />
+			</TSecGroup>
+			<TSecGroup Name="DeleteTweak" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFBamDeleter" />
 			</TSecGroup>
 			<TSecGroup Name="ReadUInt16Col" IsVisible="false" >
 				<TSecGroupInclude SubGroup="CFBamReader" />
