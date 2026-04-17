@@ -74,17 +74,5 @@
 		<SecGroup Name="DeleteSecClusGrpMemb" IsVisible="false" >
 			<SecGroupInclude SubGroup="CFSecDeleter" />
 		</SecGroup>
-		<SecGroup Name="ReadSecSysGrpMemb" IsVisible="false" >
-			<SecGroupInclude SubGroup="CFSecReader" />
-		</SecGroup>
-		<SecGroup Name="CreateSecSysGrpMemb" IsVisible="false" >
-			<SecGroupInclude SubGroup="CFSecCreator" />
-		</SecGroup>
-		<SecGroup Name="UpdateSecSysGrpMemb" IsVisible="false" >
-			<SecGroupInclude SubGroup="CFSecUpdater" />
-		</SecGroup>
-		<SecGroup Name="DeleteSecSysGrpMemb" IsVisible="false" >
-			<SecGroupInclude SubGroup="CFSecDeleter" />
-		</SecGroup>
 	</Cluster>
 </CFSec>
