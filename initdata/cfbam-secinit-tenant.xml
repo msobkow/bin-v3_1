@@ -762,6 +762,18 @@
 			<TSecGroup Name="DeleteIndexCol" IsVisible="false" >
 				<TSecGroupInclude SubGroup="CFBamDeleter" />
 			</TSecGroup>
+			<TSecGroup Name="ReadIndexTweak" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFBamReader" />
+			</TSecGroup>
+			<TSecGroup Name="CreateIndexTweak" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFBamCreator" />
+			</TSecGroup>
+			<TSecGroup Name="UpdateIndexTweak" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFBamUpdater" />
+			</TSecGroup>
+			<TSecGroup Name="DeleteIndexTweak" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFBamDeleter" />
+			</TSecGroup>
 			<TSecGroup Name="ReadInt16Col" IsVisible="false" >
 				<TSecGroupInclude SubGroup="CFBamReader" />
 			</TSecGroup>
