@@ -1206,6 +1206,30 @@
 			<TSecGroup Name="DeleteSecTentGrpMemb" IsVisible="false" >
 				<TSecGroupInclude SubGroup="CFSecDeleter" />
 			</TSecGroup>
+			<TSecGroup Name="ReadSecTentRole" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFSecReader" />
+			</TSecGroup>
+			<TSecGroup Name="CreateSecTentRole" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFSecCreator" />
+			</TSecGroup>
+			<TSecGroup Name="UpdateSecTentRole" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFSecUpdater" />
+			</TSecGroup>
+			<TSecGroup Name="DeleteSecTentRole" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFSecDeleter" />
+			</TSecGroup>
+			<TSecGroup Name="ReadSecTentRoleMemb" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFSecReader" />
+			</TSecGroup>
+			<TSecGroup Name="CreateSecTentRoleMemb" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFSecCreator" />
+			</TSecGroup>
+			<TSecGroup Name="UpdateSecTentRoleMemb" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFSecUpdater" />
+			</TSecGroup>
+			<TSecGroup Name="DeleteSecTentRoleMemb" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFSecDeleter" />
+			</TSecGroup>
 			<TSecGroup Name="ReadServerListFunc" IsVisible="false" >
 				<TSecGroupInclude SubGroup="CFBamReader" />
 			</TSecGroup>

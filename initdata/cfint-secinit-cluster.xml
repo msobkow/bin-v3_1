@@ -74,5 +74,29 @@
 		<SecGroup Name="DeleteSecClusGrpMemb" IsVisible="false" >
 			<SecGroupInclude SubGroup="CFSecDeleter" />
 		</SecGroup>
+		<SecGroup Name="ReadSecClusRole" IsVisible="false" >
+			<SecGroupInclude SubGroup="CFSecReader" />
+		</SecGroup>
+		<SecGroup Name="CreateSecClusRole" IsVisible="false" >
+			<SecGroupInclude SubGroup="CFSecCreator" />
+		</SecGroup>
+		<SecGroup Name="UpdateSecClusRole" IsVisible="false" >
+			<SecGroupInclude SubGroup="CFSecUpdater" />
+		</SecGroup>
+		<SecGroup Name="DeleteSecClusRole" IsVisible="false" >
+			<SecGroupInclude SubGroup="CFSecDeleter" />
+		</SecGroup>
+		<SecGroup Name="ReadSecClusRoleMemb" IsVisible="false" >
+			<SecGroupInclude SubGroup="CFSecReader" />
+		</SecGroup>
+		<SecGroup Name="CreateSecClusRoleMemb" IsVisible="false" >
+			<SecGroupInclude SubGroup="CFSecCreator" />
+		</SecGroup>
+		<SecGroup Name="UpdateSecClusRoleMemb" IsVisible="false" >
+			<SecGroupInclude SubGroup="CFSecUpdater" />
+		</SecGroup>
+		<SecGroup Name="DeleteSecClusRoleMemb" IsVisible="false" >
+			<SecGroupInclude SubGroup="CFSecDeleter" />
+		</SecGroup>
 	</Cluster>
 </CFSec>
