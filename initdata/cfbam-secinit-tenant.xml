@@ -1122,6 +1122,18 @@
 			<TSecGroup Name="DeleteRelationCol" IsVisible="false" >
 				<TSecGroupInclude SubGroup="CFBamDeleter" />
 			</TSecGroup>
+			<TSecGroup Name="ReadRoleDef" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFBamReader" />
+			</TSecGroup>
+			<TSecGroup Name="CreateRoleDef" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFBamCreator" />
+			</TSecGroup>
+			<TSecGroup Name="UpdateRoleDef" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFBamUpdater" />
+			</TSecGroup>
+			<TSecGroup Name="DeleteRoleDef" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFBamDeleter" />
+			</TSecGroup>
 			<TSecGroup Name="ReadSchemaDef" IsVisible="false" >
 				<TSecGroupInclude SubGroup="CFBamReader" />
 			</TSecGroup>
@@ -1144,6 +1156,18 @@
 				<TSecGroupInclude SubGroup="CFBamUpdater" />
 			</TSecGroup>
 			<TSecGroup Name="DeleteSchemaRef" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFBamDeleter" />
+			</TSecGroup>
+			<TSecGroup Name="ReadSchemaRole" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFBamReader" />
+			</TSecGroup>
+			<TSecGroup Name="CreateSchemaRole" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFBamCreator" />
+			</TSecGroup>
+			<TSecGroup Name="UpdateSchemaRole" IsVisible="false" >
+				<TSecGroupInclude SubGroup="CFBamUpdater" />
+			</TSecGroup>
+			<TSecGroup Name="DeleteSchemaRole" IsVisible="false" >
 				<TSecGroupInclude SubGroup="CFBamDeleter" />
 			</TSecGroup>
 			<TSecGroup Name="ReadSchemaTweak" IsVisible="false" >
