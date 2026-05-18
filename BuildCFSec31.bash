@@ -42,27 +42,7 @@ if [ "$MavenStatus" == "0" ]; then
 	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfsec.cfsecsaxramldr/3.1.42/server.markhome.mcf.v3_1.cfsec.cfsecsaxramldr-3.1.42.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfsec.cfsecjavafx/3.1.42/server.markhome.mcf.v3_1.cfsec.cfsecjavafx-3.1.42.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfsec.cfseccustfx/3.1.42/server.markhome.mcf.v3_1.cfsec.cfseccustfx-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfint.cfint/3.1.42/server.markhome.mcf.v3_1.cfint.cfint-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfint.cfintbuff/3.1.42/server.markhome.mcf.v3_1.cfint.cfintbuff-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfint.cfintjpa/3.1.42/server.markhome.mcf.v3_1.cfint.cfintjpa-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfint.cfintjpatest/3.1.42/server.markhome.mcf.v3_1.cfint.cfintjpatest-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfint.cfintsaxloader/3.1.42/server.markhome.mcf.v3_1.cfint.cfintsaxloader-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfint.cfintram/3.1.42/server.markhome.mcf.v3_1.cfint.cfintram-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfint.cfintramtest/3.1.42/server.markhome.mcf.v3_1.cfint.cfintramtest-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfint.cfintsaxramldr/3.1.42/server.markhome.mcf.v3_1.cfint.cfintsaxramldr-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfint.cfintjavafx/3.1.42/server.markhome.mcf.v3_1.cfint.cfintjavafx-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfint.cfintcustfx/3.1.42/server.markhome.mcf.v3_1.cfint.cfintcustfx-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfbam.cfbam/3.1.42/server.markhome.mcf.v3_1.cfbam.cfbam-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfbam.cfbambuff/3.1.42/server.markhome.mcf.v3_1.cfbam.cfbambuff-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfbam.cfbamjpa/3.1.42/server.markhome.mcf.v3_1.cfbam.cfbamjpa-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfbam.cfbamjpatest/3.1.42/server.markhome.mcf.v3_1.cfbam.cfbamjpatest-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfbam.cfbamsaxloader/3.1.42/server.markhome.mcf.v3_1.cfbam.cfbamsaxloader-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfbam.cfbamram/3.1.42/server.markhome.mcf.v3_1.cfbam.cfbamram-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfbam.cfbamramtest/3.1.42/server.markhome.mcf.v3_1.cfbam.cfbamramtest-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfbam.cfbamsaxramldr/3.1.42/server.markhome.mcf.v3_1.cfbam.cfbamsaxramldr-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfbam.cfbamjavafx/3.1.42/server.markhome.mcf.v3_1.cfbam.cfbamjavafx-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfbam.cfbamcustfx/3.1.42/server.markhome.mcf.v3_1.cfbam.cfbamcustfx-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $MCF_HOME/server.markhome.mcf.v3_1.*/target/*-spring-boot.jar $MCF_HOME/bin-v3_1
+	cp -v $MCF_HOME/server.markhome.mcf.v3_1.cfsec*/target/*-spring-boot.jar $MCF_HOME/bin-v3_1
 	echo "SUCCESS: All 3.1 Java builds completed successfully"
 fi
 popd
