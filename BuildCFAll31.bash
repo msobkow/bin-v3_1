@@ -21,7 +21,6 @@ for aprojdir in \
 	server.markhome.mcf.v3_1.cflib.javafx \
 	\
 	server.markhome.mcf.v3_1.cfsec.cfsec \
-	server.markhome.mcf.v3_1.cfsec.cfsecbuff \
 	server.markhome.mcf.v3_1.cfsec.cfsecjpa \
 	server.markhome.mcf.v3_1.cfsec.cfsecjpatest \
 	server.markhome.mcf.v3_1.cfsec.cfsecsaxloader \
@@ -30,7 +29,6 @@ for aprojdir in \
 	server.markhome.mcf.v3_1.cfsec.cfsecramtest \
 	\
 	server.markhome.mcf.v3_1.cfint.cfint \
-	server.markhome.mcf.v3_1.cfint.cfintbuff \
 	server.markhome.mcf.v3_1.cfint.cfintjpa \
 	server.markhome.mcf.v3_1.cfint.cfintjpatest \
 	server.markhome.mcf.v3_1.cfint.cfintsaxloader \
@@ -39,7 +37,6 @@ for aprojdir in \
 	server.markhome.mcf.v3_1.cfint.cfintramtest \
 	\
 	server.markhome.mcf.v3_1.cfbam.cfbam \
-	server.markhome.mcf.v3_1.cfbam.cfbambuff \
 	server.markhome.mcf.v3_1.cfbam.cfbamjpa \
 	server.markhome.mcf.v3_1.cfbam.cfbamjpatest \
 	server.markhome.mcf.v3_1.cfbam.cfbamsaxloader \
@@ -65,7 +62,6 @@ if [ "$MavenStatus" == "0" ]; then
 	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cflib.dbtest/3.1.42/server.markhome.mcf.v3_1.cflib.dbtest-3.1.42.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cflib.javafx/3.1.42/server.markhome.mcf.v3_1.cflib.javafx-3.1.42.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfsec.cfsec/3.1.42/server.markhome.mcf.v3_1.cfsec.cfsec-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfsec.cfsecbuff/3.1.42/server.markhome.mcf.v3_1.cfsec.cfsecbuff-3.1.42.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfsec.cfsecjpa/3.1.42/server.markhome.mcf.v3_1.cfsec.cfsecjpa-3.1.42.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfsec.cfsecjpatest/3.1.42/server.markhome.mcf.v3_1.cfsec.cfsecjpatest-3.1.42.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfsec.cfsecsaxloader/3.1.42/server.markhome.mcf.v3_1.cfsec.cfsecsaxloader-3.1.42.jar $MCF_HOME/bin-v3_1
@@ -75,7 +71,6 @@ if [ "$MavenStatus" == "0" ]; then
 	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfsec.cfsecjavafx/3.1.42/server.markhome.mcf.v3_1.cfsec.cfsecjavafx-3.1.42.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfsec.cfseccustfx/3.1.42/server.markhome.mcf.v3_1.cfsec.cfseccustfx-3.1.42.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfint.cfint/3.1.42/server.markhome.mcf.v3_1.cfint.cfint-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfint.cfintbuff/3.1.42/server.markhome.mcf.v3_1.cfint.cfintbuff-3.1.42.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfint.cfintjpa/3.1.42/server.markhome.mcf.v3_1.cfint.cfintjpa-3.1.42.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfint.cfintjpatest/3.1.42/server.markhome.mcf.v3_1.cfint.cfintjpatest-3.1.42.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfint.cfintsaxloader/3.1.42/server.markhome.mcf.v3_1.cfint.cfintsaxloader-3.1.42.jar $MCF_HOME/bin-v3_1
@@ -85,7 +80,6 @@ if [ "$MavenStatus" == "0" ]; then
 	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfint.cfintjavafx/3.1.42/server.markhome.mcf.v3_1.cfint.cfintjavafx-3.1.42.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfint.cfintcustfx/3.1.42/server.markhome.mcf.v3_1.cfint.cfintcustfx-3.1.42.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfbam.cfbam/3.1.42/server.markhome.mcf.v3_1.cfbam.cfbam-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfbam.cfbambuff/3.1.42/server.markhome.mcf.v3_1.cfbam.cfbambuff-3.1.42.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfbam.cfbamjpa/3.1.42/server.markhome.mcf.v3_1.cfbam.cfbamjpa-3.1.42.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfbam.cfbamjpatest/3.1.42/server.markhome.mcf.v3_1.cfbam.cfbamjpatest-3.1.42.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfbam.cfbamsaxloader/3.1.42/server.markhome.mcf.v3_1.cfbam.cfbamsaxloader-3.1.42.jar $MCF_HOME/bin-v3_1

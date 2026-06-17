@@ -32,7 +32,6 @@ for aprojdir in \
 	server.markhome.mcf.v3_1.cflib.javafx \
 	\
 	server.markhome.mcf.v3_1.cfsec.cfsec \
-	server.markhome.mcf.v3_1.cfsec.cfsecbuff \
 	server.markhome.mcf.v3_1.cfsec.cfsecjpa \
 	server.markhome.mcf.v3_1.cfsec.cfsecjpatest \
 	server.markhome.mcf.v3_1.cfsec.cfsecsaxloader \
@@ -42,7 +41,6 @@ for aprojdir in \
 	server.markhome.mcf.v3_1.cfsec.cfsecramtest \
 	\
 	server.markhome.mcf.v3_1.cfint.cfint \
-	server.markhome.mcf.v3_1.cfint.cfintbuff \
 	server.markhome.mcf.v3_1.cfint.cfintjpa \
 	server.markhome.mcf.v3_1.cfint.cfintjpatest \
 	server.markhome.mcf.v3_1.cfint.cfintsaxloader \
@@ -52,7 +50,6 @@ for aprojdir in \
 	server.markhome.mcf.v3_1.cfint.cfintramtest \
 	\
 	server.markhome.mcf.v3_1.cfbam.cfbam \
-	server.markhome.mcf.v3_1.cfbam.cfbambuff \
 	server.markhome.mcf.v3_1.cfbam.cfbamjpa \
 	server.markhome.mcf.v3_1.cfbam.cfbamjpatest \
 	server.markhome.mcf.v3_1.cfbam.cfbamsaxloader \
