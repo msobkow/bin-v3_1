@@ -21,6 +21,8 @@ else
 fi
 cd $MCF_HOME
 for aprojdir in \
+	server.markhome.mcf.v3_1.cfsec.cfsecpub \
+	server.markhome.mcf.v3_1.cfsec.cfsecprot \
 	server.markhome.mcf.v3_1.cfsec.cfsec \
 	server.markhome.mcf.v3_1.cfsec.cfsecjpa \
 	server.markhome.mcf.v3_1.cfsec.cfsecjpatest \

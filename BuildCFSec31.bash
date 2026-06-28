@@ -6,6 +6,8 @@ fi
 pushd $MCF_HOME
 let MavenStatus=0
 for aprojdir in \
+	server.markhome.mcf.v3_1.cfsec.cfsecpub \
+	server.markhome.mcf.v3_1.cfsec.cfsecprot \
 	server.markhome.mcf.v3_1.cfsec.cfsec \
 	server.markhome.mcf.v3_1.cfsec.cfsecjpa \
 	server.markhome.mcf.v3_1.cfsec.cfsecjpatest \
@@ -31,6 +33,8 @@ if [ "$MavenStatus" == "0" ]; then
 	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cflib.dbutil/3.1.42/server.markhome.mcf.v3_1.cflib.dbutil-3.1.42.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cflib.dbtest/3.1.42/server.markhome.mcf.v3_1.cflib.dbtest-3.1.42.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cflib.javafx/3.1.42/server.markhome.mcf.v3_1.cflib.javafx-3.1.42.jar $MCF_HOME/bin-v3_1
+	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfsec.cfsecpub/3.1.42/server.markhome.mcf.v3_1.cfsec.cfsecpub-3.1.42.jar $MCF_HOME/bin-v3_1
+	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfsec.cfsecprot/3.1.42/server.markhome.mcf.v3_1.cfsec.cfsecprot-3.1.42.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfsec.cfsec/3.1.42/server.markhome.mcf.v3_1.cfsec.cfsec-3.1.42.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfsec.cfsecjpa/3.1.42/server.markhome.mcf.v3_1.cfsec.cfsecjpa-3.1.42.jar $MCF_HOME/bin-v3_1
 	cp -v $HOME/.m2/repository/server/markhome/mcf/v3_1/server.markhome.mcf.v3_1.cfsec.cfsecjpatest/3.1.42/server.markhome.mcf.v3_1.cfsec.cfsecjpatest-3.1.42.jar $MCF_HOME/bin-v3_1

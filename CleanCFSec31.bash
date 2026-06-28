@@ -9,7 +9,9 @@ for aprojdir in \
 	server.markhome.mcf.v3_1.cfsec.cfsecsaxloader \
 	server.markhome.mcf.v3_1.cfsec.cfsecjpatest \
 	server.markhome.mcf.v3_1.cfsec.cfsecjpa \
-	server.markhome.mcf.v3_1.cfsec.cfsec
+	server.markhome.mcf.v3_1.cfsec.cfsec \
+	server.markhome.mcf.v3_1.cfsec.cfsecprot \
+	server.markhome.mcf.v3_1.cfsec.cfsecpub
 do
 	if [ -a ${aprojdir}/pom.xml ]; then
 		pushd ${aprojdir}
