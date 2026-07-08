@@ -13,6 +13,6 @@ for aprojdir in \
 	server.markhome.mcf.v3_1.cfsec.cfsecprot \
 	server.markhome.mcf.v3_1.cfsec.cfsecpub
 do
-	rm -Rf ${aprojdir}/src/main/java/server ${aprojdir}/src/main/resources/*
+	rm -Rf ${aprojdir}/src/main/java/* ${aprojdir}/src/main/resources/*
 done
 popd
