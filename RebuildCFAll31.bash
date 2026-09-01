@@ -3,6 +3,8 @@ export CLIARGS="$*"
 if [ "$CLIARGS" == "" ]; then
 	export CLIARGS="42"
 fi
+#$INIT_BUILD_RESET
+$INIT_BUILD
 clear
 WipeFractalCFAll31.bash
 ManufactureCFSec31Java.bash $CLIARGS
