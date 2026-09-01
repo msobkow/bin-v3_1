@@ -1,6 +1,22 @@
 #!/bin/bash
 pushd $MCF_HOME
 for aprojdir in \
+	server.markhome.mcf \
+	server.markhome.mcf.v3_1 \
+do
+	if [ "$MavenStatus" == "0" ]; then
+		if [ -a ${aprojdir}/pom.xml ]; then
+			pushd ${aprojdir}
+				mvn -DbuildString="$CLIARGS" -U deploy
+				let MavenStatus=$?
+				if [ "$MavenStatus" != "0" ]; then
+					echo "ERROR: mvn deploy -DbuildString=\"$CLIARGS\" for ${aprojdir} returned status ${MavenStatus} - build aborted"
+				fi
+			popd
+		fi
+	fi
+done
+for aprojdir in \
 	server.markhome.mcf.v3_1.cfbam.cfbamcustfx \
 	server.markhome.mcf.v3_1.cfbam.cfbamjavafx \
 	server.markhome.mcf.v3_1.cfbam.cfbamsaxramldr \
