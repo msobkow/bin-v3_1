@@ -15,6 +15,7 @@ for aprojdir in \
 	server.markhome.mcf \
 	server.markhome.mcf.v3_1 \
 	\
+	commons-io-js \
 	commons-codec-js \
 	\
 	server.markhome.mcf.v3_1.cflib \

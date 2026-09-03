@@ -6,6 +6,12 @@ fi
 pushd $MCF_HOME
 let MavenStatus=0
 for aprojdir in \
+	server.markhome.mcf \
+	server.markhome.mcf.v3_1 \
+	commons-io-js \
+	commons-codec-js \
+	server.markhome.mcf.v3_1.cflib \
+	server.markhome.mcf.v3_1.cflib.dbutil \
 	server.markhome.mcf.v3_1.cfsec.cfsecpub \
 	server.markhome.mcf.v3_1.cfsec.cfsecprot \
 	server.markhome.mcf.v3_1.cfsec.cfsec \
