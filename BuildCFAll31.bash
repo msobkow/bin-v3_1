@@ -15,6 +15,8 @@ for aprojdir in \
 	server.markhome.mcf \
 	server.markhome.mcf.v3_1 \
 	\
+	junit-framework-js \
+	jena-js \
 	commons-io-js \
 	commons-codec-js \
 	\
