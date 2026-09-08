@@ -1,0 +1,243 @@
+#!/bin/bash
+
+function listProjectDirs() {
+	myDirNames=""
+	for underme in `find . -type d`
+	do
+		if [ -d "$underme/src/main/java" ]
+		then
+			myCheckForIllegal=echo "$underme" | sed -e '1,$s:^.*[ 	,\:\!].*$:ILLEGAL:g'
+			if [ ! "$myCheckForIllegal" == "ILLEGAL" ]
+			then
+				myDirNames="$myDirNames $underme"
+			fi
+		fi
+	done
+	echo $myDirNames
+}
+
+function extractNextDirName() {
+	endnpathRemaining="$1"
+	endnfilePart=""
+	endnretval=""
+	if [ "$endnpathRemaining" == "" ]
+	then
+		endnretval=""
+	else
+		endnfilePart=echo "$endnpathRemaining" | sed -e '^\([-a-zA-Z0-9_]*\)\..*$'
+		if [ "$endnfilePart" == "" ]
+		then
+			endnretval="$endnpathRemaining"
+		else
+			endnretval="$endnfilePart"
+		fi
+	fi
+	echo $endnretval
+}
+
+function endWithSlash() {
+	ewsarg="$1"
+	ewsnameEndWithSlashStr=`echo "$ewsarg" | sed -e '1,$s:^.*\(.\)$:\1:'`
+	if [ "$ewsnameEndWithSlashStr" == "/" ]
+	then
+		echo "$ewsarg"
+	else
+		echo="$ewsarg/"
+	fi
+}
+
+function convertToPath() {
+	ctppackageName="$1"
+	ctpretval=""
+	if [ ! "$ctppackageName" == "" ]
+	then
+		ctpretval=echo "$ctppackageName" | sed -e '1,$s:\.:/:g'
+	fi
+	echo "$ctpretval"
+}
+
+function buildPath() {
+	bprootDir="$1"
+	bpaDir="$2"
+	bpnewpath=""
+	if [ "$bprootDir" == "" ]
+	then
+		echo ""
+	else
+		if [ "$bpaDir" == "" ]
+		then
+			echo "$bprootDir"
+		else
+			bpnewpath=$(endWithSlash "$bprootDir")
+			bpnewpath=$(endWithSlash "$bpnewPath$aDir")
+			echo $(convertToPath "$bpnewpath")
+		fi
+	fi
+}
+
+function calcPath() {
+	cpretval=""
+	cprootDir="$1"
+	cpaDir="$2"
+	cppackageName="$3"
+	cppathName=""
+	if [ ! -d "$cprootDir" ]
+	then
+		cpretval=""
+	else
+		cprootDir=$(endWithSlash "$cprootDir")
+		if [ "$cpaDir" != "" ]
+		then
+			if [ ! -d "$cpaDir" ]
+			then
+				cpretval=""
+			else
+				cppathName=$(buildPath "$cprootDir" "$cpaDir")
+				if [ "$cppathName" != "" ]
+				then
+					if [ "$cppackageName" == "" ]
+					then
+						cppackageName=$(basePackage "$cprootDir" "$cppathName")
+					fi
+					if [ "$cppackageName" == "" ]
+					then
+						cppackagePath=""
+					else
+						cppackagePath=$(convertToPath "$cppackageName")
+					fi
+					if [ ! -d "$cppackagePath" ]
+					then
+						cpretval=""
+					else
+						cpretval="$cppackagePath"
+					fi
+				else
+					cpretval=""
+				fi
+			fi
+		else
+			cpretval=""
+		fi
+	fi
+	echo "$cpretval"
+}
+
+function hasPath() {
+	hpretval=0
+	hprootDir="$1"
+	hpaDir="$2"
+	hppackageName="$3"
+	hppathName=""
+	if [ ! -d "$hprootDir" ]
+	then
+		hpretval=0
+	else
+		hprootDir=$(endWithSlash "$hprootDir")
+		if [ "$hpaDir" != "" ]
+		then
+			if [ ! -d "$hprootDir$hpaDir" ]
+			then
+				hpretval=0
+			else
+				hppathName=$(calcPath "$hprootDir" "$hpaDir")
+				if [ "$hppathName" != "" ]
+				then
+					if [ "$hppackageName" == "" ]
+					then
+						hppackageName=$(basePackage "$hprootDir" "$hppathName")
+					fi
+					if [ "$hppackageName" == "" ]
+					then
+						hppackagePath=""
+					else
+						hppackagePath=$(convertToPath "$hppackageName")
+					fi
+					if [ ! -d "$hppackagePath" ]
+					then
+						hpretval=0
+					else
+						hpretval=1
+					fi
+				else
+					hpretval=1
+				fi
+			fi
+		else
+			hpretval=0
+		fi
+	fi
+	echo $hpretval
+}
+
+function basePackage() {
+	bsprootDir="$1"
+	bsppathName="$2"
+	bsprawpkg=""
+	if [ "$bsprootDir" == "" ]
+	then
+		echo ""
+	fi
+	bsprootDir=$(endWithSlash "$bsprootDir")
+	for bspafile in `find "$bsprootDir/src/main/java" -name '*.java' -a -type f`
+	do
+		if [ "$bsprawpkg" == "" ]
+		then
+			bsprawpkg=grep '^[ 	]*package[ 	]*[-a-z0-9A-Z_].*;' "$bspafile" | sed -e '1,$s:^[ 	]*package[ 	]*\([-a-z0-9A-Z_].*\);.*$:\1:|head -1'
+			if [ "$bsprawpkg" != "" ]
+			then
+				break;
+			fi
+		fi
+	done
+	echo "$bsprawkpg"
+}
+
+function majorPart() {
+	mjadir="$1"
+	mjpkgroot="$2"
+	mjmajor=""
+	if [ ! "$mjpkgroot" == "" && ! "$mjadir" == "" ]
+	then
+		mjmajor=echo "$mjadir" | sed -e "1,\\\$s:^$mjpkgroot.\\\([-a-zA-Z0-9_]\*\\\)\\\.\.\*\$:\\1:"
+		if [ "$mjmajor"="" ]
+		then
+			mjmajor=echo "$mjadir" | sed -e "1,\\\$s:^$mjpkgroot.\\\([-a-zA-Z0-9_]\*\\\)\$:\\1:"
+			if [ "$mjmajor" == "" ]
+			then
+				mjmajor=echo "$mjadir" | sed -e "1,\\\$s:^$mjpkgroot\.\*$::"
+			fi
+		fi
+	fi
+	echo "$mjmajor"
+}
+
+function minorPart() {
+	mnadir="$1"
+	mnpkgroot="$2"
+	mnminor=""
+	if [ ! "$mnpkgroot" == "" && ! "$mnadir" == "" ]
+	then
+		mnminor=echo "$mnadir" | sed -e "1,\\\$s:^$mnpkgroot.[-a-zA-Z0-9_]\*\\\.\\\([-a-zAZ0-9_]\*\\\)\\\.\.\*\$:\\1:"
+		if [ "$mnminor"="" ]
+		then
+			mnminor=echo "$mnadir" | sed -e "1,\\\$s:^$mnpkgroot.[-a-zA-Z0-9_]\*\\\.\\\([-a-zAZ0-9_]\*\\\)\$:\\1:"
+		else
+			mnminor=""
+		fi
+	fi
+	echo "$mnminor"
+}
+
+
+for prjdir in $(listProjectDirs)
+do
+	thepkg=$(basePackage "$prjdir")
+	echo "Project directory $prjdir contains package $prjdir"
+#	if [ ! "$thepkg" == "" ]
+#	then
+#		major=majorPart "$prjdir" "$thepkg"
+#		minor=minorPart "$prjdir" "$thepkg"
+#		`echo major="$major", minor="$minor"`
+#	fi
+done
+echo 1

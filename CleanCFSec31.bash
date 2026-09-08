@@ -35,6 +35,7 @@ for aprojdir in \
 	commons-io-js \
 	jena-js \
 	junit-framework-js \
+	commons-lang3-js \
 	\
 	server.markhome.mcf.v3_1 \
 	server.markhome.mcf

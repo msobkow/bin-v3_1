@@ -8,10 +8,11 @@ let MavenStatus=0
 for aprojdir in \
 	server.markhome.mcf \
 	server.markhome.mcf.v3_1 \
-	junit-framework-js \
-	jena-js \
+	commons-lang3-js \
 	commons-io-js \
 	commons-codec-js \
+	junit-framework-js \
+	jena-js \
 	server.markhome.mcf.v3_1.cflib \
 	server.markhome.mcf.v3_1.cflib.dbutil \
 	server.markhome.mcf.v3_1.cfsec.cfsecpub \
