@@ -6,8 +6,8 @@ fi
 clear
 #$INIT_BUILD_RESET
 $INIT_BUILD
-WipeFractalCFSec31.bash
-ManufactureCFSec31Java.bash $CLIARGS
-CleanCFSec31.bash
+WipeFractalSecure31.bash
+ManufactureSecure31Java.bash $CLIARGS
+CleanSecure31.bash
 clear
-time BuildCFSec31.bash $CLIARGS
+time BuildSecure31.bash $CLIARGS

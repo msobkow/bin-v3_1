@@ -1,58 +1,58 @@
 #!/bin/bash
 if [ "$MCF_HOME" == "" ]; then
-	if [ ! -d /opt/mcf ]; then
-		sudo mkdir /opt/mcf
-		sudo chown $USER:$USER /opt/mcf
+	if [ ! -d /opt/ycf ]; then
+		sudo mkdir /opt/ycf
+		sudo chown $USER:$USER /opt/ycf
 	fi;
-	if [ ! -d /opt/mcf/v3_1 ]; then
-		mkdir /opt/mcf/v3_1
+	if [ ! -d /opt/ycf/v3_1 ]; then
+		mkdir /opt/ycf/v3_1
 	fi
-	if [ ! -d /opt/mcf/v3_1/java ]; then
-		mkdir /opt/mcf/v3_1/java
+	if [ ! -d /opt/ycf/v3_1/java ]; then
+		mkdir /opt/ycf/v3_1/java
 	fi
-	export MCF_HOME=/opt/mcf/v3_1/java
+	export MCF_HOME=/opt/ycf/v3_1/java
 fi
 if [ "$MCF_HOME" != "" ]; then
 	pushd $MCF_HOME
 	for arepo in \
 		bin-v3_1 \
-		server.markhome.mcf \
-		server.markhome.mcf.v3_1 \
-		server.markhome.mcf.v3_1.cflib \
-		server.markhome.mcf.v3_1.cflib.dbutil \
-		server.markhome.mcf.v3_1.cflib.dbtest \
-		server.markhome.mcf.v3_1.cflib.javafx \
-		server.markhome.mcf.v3_1.cfsec.cfsec \
-		server.markhome.mcf.v3_1.cfsec.cfsecjpa \
-		server.markhome.mcf.v3_1.cfsec.cfsecsaxloader \
-		server.markhome.mcf.v3_1.cfsec.cfsecram \
-		server.markhome.mcf.v3_1.cfsec.cfsecjpatest \
-		server.markhome.mcf.v3_1.cfsec.cfsecramtest \
-		server.markhome.mcf.v3_1.cfsec.cfsecjavafx \
-		server.markhome.mcf.v3_1.cfsec.cfseccustfx \
-		server.markhome.mcf.v3_1.cfsec.cfsecappsetup \
-		server.markhome.mcf.v3_1.cfsec.cfsecsaxramldr \
-		server.markhome.mcf.v3_1.cfint.cfint \
-		server.markhome.mcf.v3_1.cfint.cfintjpa \
-		server.markhome.mcf.v3_1.cfint.cfintsaxloader \
-		server.markhome.mcf.v3_1.cfint.cfintram \
-		server.markhome.mcf.v3_1.cfint.cfintjpatest \
-		server.markhome.mcf.v3_1.cfint.cfintramtest \
-		server.markhome.mcf.v3_1.cfint.cfintjavafx \
-		server.markhome.mcf.v3_1.cfint.cfintcustfx \
-		server.markhome.mcf.v3_1.cfint.cfintappsetup \
-		server.markhome.mcf.v3_1.cfint.cfintsaxramldr \
-		server.markhome.mcf.v3_1.cfbam.cfbam \
-		server.markhome.mcf.v3_1.cfbam.cfbamjpa \
-		server.markhome.mcf.v3_1.cfbam.cfbamsaxloader \
-		server.markhome.mcf.v3_1.cfbam.cfbamram \
-		server.markhome.mcf.v3_1.cfbam.cfbamjpatest \
-		server.markhome.mcf.v3_1.cfbam.cfbamramtest \
-		server.markhome.mcf.v3_1.cfbam.cfbamjavafx \
-		server.markhome.mcf.v3_1.cfbam.cfbamcustfx \
-		server.markhome.mcf.v3_1.cfbam.cfbamcusteditor \
-		server.markhome.mcf.v3_1.cfbam.cfbamappsetup \
-		server.markhome.mcf.v3_1.cfbam.cfbamsaxramldr
+		server.markhome.ycf \
+		server.markhome.ycf.v3_1 \
+		server.markhome.ycf.v3_1.cflib \
+		server.markhome.ycf.v3_1.dbutil \
+		server.markhome.ycf.v3_1.dbtest \
+		server.markhome.ycf.v3_1.javafx \
+		server.markhome.ycf.v3_1.secure.secure \
+		server.markhome.ycf.v3_1.secure.securejpa \
+		server.markhome.ycf.v3_1.secure.securesaxloader \
+		server.markhome.ycf.v3_1.secure.secureram \
+		server.markhome.ycf.v3_1.secure.securejpatest \
+		server.markhome.ycf.v3_1.secure.secureramtest \
+		server.markhome.ycf.v3_1.secure.securejavafx \
+		server.markhome.ycf.v3_1.secure.securecustfx \
+		server.markhome.ycf.v3_1.secure.secureappsetup \
+		server.markhome.ycf.v3_1.secure.securesaxramldr \
+		server.markhome.ycf.v3_1.intnet.intnet \
+		server.markhome.ycf.v3_1.intnet.intnetjpa \
+		server.markhome.ycf.v3_1.intnet.intnetsaxloader \
+		server.markhome.ycf.v3_1.intnet.intnetram \
+		server.markhome.ycf.v3_1.intnet.intnetjpatest \
+		server.markhome.ycf.v3_1.intnet.intnetramtest \
+		server.markhome.ycf.v3_1.intnet.intnetjavafx \
+		server.markhome.ycf.v3_1.intnet.intnetcustfx \
+		server.markhome.ycf.v3_1.intnet.intnetappsetup \
+		server.markhome.ycf.v3_1.intnet.intnetsaxramldr \
+		server.markhome.ycf.v3_1.busmodel.busmodel \
+		server.markhome.ycf.v3_1.busmodel.busmodeljpa \
+		server.markhome.ycf.v3_1.busmodel.busmodelsaxloader \
+		server.markhome.ycf.v3_1.busmodel.busmodelram \
+		server.markhome.ycf.v3_1.busmodel.busmodeljpatest \
+		server.markhome.ycf.v3_1.busmodel.busmodelramtest \
+		server.markhome.ycf.v3_1.busmodel.busmodeljavafx \
+		server.markhome.ycf.v3_1.busmodel.busmodelcustfx \
+		server.markhome.ycf.v3_1.busmodel.busmodelcusteditor \
+		server.markhome.ycf.v3_1.busmodel.busmodelappsetup \
+		server.markhome.ycf.v3_1.busmodel.busmodelsaxramldr
 	do
 		if [ ! -d $arepo ]; then
 			git clone git@github.com:msobkow/${arepo}.git
