@@ -1,0 +1,106 @@
+#!/bin/bash
+export SAVE_MY_DIR=`pwd`
+export WEBDATA_PACKAGE_NAME=ycf
+export BUILD_STAMP="alpha13-ebf-202610172100"
+export WEBDATA_PACKAGE_VERSION="${BUILD_STAMP}"
+
+export MODULE_DIR_TREE="ycf server.markhome.ycf.v3_1.secure server.markhome.ycf.v3_1.intnet server.markhome.ycf.v3_1.bammodel ycf/bin-v3_1 server.markhome.ycf.v3_1.secure/bin-v3_1 server.markhome.ycf.v3_1.intnet/bin-v3_1 server.markhome.ycf.v3_1.bammodel/bin-v3_1 ycf/src server.markhome.ycf.v3_1.secure/src server.markhome.ycf.v3_1.intnet/src server.markhome.ycf.v3_1.bammodel/src ycf/pom.xml server.markhome.ycf.v3_1.secure/pom.xml server.markhome.ycf.v3_1.intnet/pom.xml server.markhome.ycf.v3_1.bammodel/pom.xml ycf/README.* server.markhome.ycf.v3_1.secure/README.* server.markhome.ycf.v3_1.intnet/README.* server.markhome.ycf.v3_1.bammodel/README.* ycf/LICENS* server.markhome.ycf.v3_1.secure/LICENS* server.markhome.ycf.v3_1.intnet/LICENS* server.markhome.ycf.v3_1.bammodel/LICENS* ycf/Apache* server.markhome.ycf.v3_1.secure/Apache* server.markhome.ycf.v3_1.intnet/Apache* server.markhome.ycf.v3_1.bammodel/Apache* ycf/Gpl* server.markhome.ycf.v3_1.secure/Gpl* server.markhome.ycf.v3_1.intnet/Gpl* server.markhome.ycf.v3_1.bammodel/Gpl* ycf/APACHE* server.markhome.ycf.v3_1.secure/APACHE* server.markhome.ycf.v3_1.intnet/APACHE* server.markhome.ycf.v3_1.bammodel/APACHE* ycf/GPL* server.markhome.ycf.v3_1.secure/GPL* server.markhome.ycf.v3_1.intnet/GPL* server.markhome.ycf.v3_1.bammodel/GPL* ycf/gpl* server.markhome.ycf.v3_1.secure/gpl* server.markhome.ycf.v3_1.intnet/gpl* server.markhome.ycf.v3_1.bammodel/gpl* ycf/apache* server.markhome.ycf.v3_1.secure/apache* server.markhome.ycf.v3_1.intnet/apache* server.markhome.ycf.v3_1.bammodel/apache*"
+
+export USER_OPT_DIR=/opt/${USER}
+if [ ! -d ${USER_OPT_DIR} ]
+then
+	sudo mkdir ${USER_OPT_DIR}
+	sudo chown ${USER}:${USER} ${USER_OPT_DIR}
+	sudo chmod 755 ${USER_OPT_DIR}
+fi
+
+export USER_HTML_DIR=${USER_OPT_DIR}/html
+if [ ! -d ${USER_HTML_DIR} ]
+then
+	mkdir ${USER_HTML_DIR}
+fi
+
+export USER_PUBLIC_HTML_DIR=${USER_HTML_DIR}/public
+if [ ! -d ${USER_PUBLIC_HTML_DIR} ]
+then
+	mkdir ${USER_PUBLIC_HTML_DIR}
+fi
+
+export USER_YCF_PUBLIC_HTML_DIR=${USER_PUBLIC_HTML_DIR}/ycf
+if [ ! -d ${USER_YCF_PUBLIC_HTML_DIR} ]
+then
+	mkdir ${USER_YCF_PUBLIC_HTML_DIR}
+fi
+
+export WEBDATA_COPY_TO_DEV_DIR=${USER_YCF_PUBLIC_HTML_DIR}
+export WEBDATA_COPY_TO_PROD_DIR=/opt/ycf/v3_1/java/msobkow.github.io/ycf/
+
+#export WEBDATA_COPY_DEV_TO_PROD_COMMAND="for afile in `find ${USER_YCF_PUBLIC_HTML_DIR} -type f` do cp -v ${afile} ${WEBDATA_COPY_TO_PROD_DIR}/${afile}; ex ${WEBDATA_COPY_TO_PROD_DIR}/${afile} < echo \"1,\$s,http://ycf.markhome.server/,https://msobkow.github.io/,g;w;q;;\"; done;"
+#export WEBDATA_COPY_TO_HOST=ycf.markhome.server
+#export WEBDATA_COPY_TO_WIPE_COMMAND=rm -Rf ${WEBDATA_COPY_TO_DIR}/*
+#export WEBDATA_EXEC_COMMAND=bash -c 
+#export WEBDATA_EXEC_PROD_COMMAND=ssh ${USER}@${WEBDATA_COPY_TO_HOST} -c 
+
+# Fixed: Converted single quotes to double quotes, escaped internal quotes, and ensured runtime evaluation
+export CURRENT_DATE_TIME=$(date '+%Y-%m-%d %H:%M')
+#export WEBDATA_COPIED_GIT_ADD=pushd $WEBDATA_COPY_TO_DIR; git add .; popd
+#export WEBDATA_COPIED_GIT_COMMIT="pushd $WEBDATA_COPY_TO_DIR; git commit -m \"${CURRENT_DATE_TIME} CST Update website with ${WEBDATA_PACKAGE_NAME}-${WEBDATA_PACKAGE_VERSION} documentation and resources\"; popd"
+#export WEBDATA_COPIED_GIT_PUSH="pushd $WEBDATA_COPY_TO_DIR; git push; popd"
+#export WEBDATA_COPIED_GIT_REMOVE_TAG="pushd $WEBDATA_COPY_TO_DIR; git tag -d ${WEBDATA_PACKAGE_VERSION}; git tag -d current; git commit -m \"${CURRENT_DATE_TIME} CST Remove old tag ${WEBDATA_PACKAGE_VERSION}\"; git push --tags; popd"
+#export WEBDATA_COPIED_GIT_SET_TAG="pushd $WEBDATA_COPY_TO_DIR; git tag ${WEBDATA_PACKAGE_VERSION}; git tag current; git commit -m \"${CURRENT_DATE_TIME} CST Reset tags ${WEBDATA_PACKAGE_VERSION} and current\"; git push --tags; popd"
+
+# Determine run state
+if [ "$BUILD_STAMP" == "" ]; then
+	export DO_RESET=Y
+elif [ "$1" == "reset" ]; then
+	export DO_RESET=Y
+else
+	export DO_RESET=N
+fi
+
+# Fixed: Consolidated redundant directory configuration logic into a single block
+if [ "$DO_RESET" == "Y" ]
+then
+	#export BUILD_STAMP=`date '+%Y-%m-%d-%Hh%M'`
+	export BUILD_STAMP="alpha13-ebf-202610172100"
+
+	export TMPDIR=/opt/${USER}
+	if [ ! -d $TMPDIR ]; then
+		sudo mkdir $TMPDIR
+		sudo chown $USER:$USER $TMPDIR
+		sudo chmod 755 $TMPDIR
+	fi
+
+	# Fixed: Added LC_ALL=C for cross-platform OS compatibility (Linux/macOS)
+	RANDOM_STR=$(LC_ALL=C tr -dc A-Za-z0-9 </dev/urandom | head -c 16)
+
+	export TMP_DIR=${TMPDIR}/${RANDOM_STR}
+	if [ ! -d $TMP_DIR ]; then
+		mkdir $TMP_DIR
+	fi
+fi
+
+#echo MODULE_DIR_TREE=${MODULE_DIR_TREE}
+#echo WEBDATA_DEV_MAKE_DIRS_COMMAND=${WEBDATA_DEV_MAKE_DIRS_COMMAND}
+#echo WEBDATA_PROD_MAKE_DIRS_COMMAND=${WEBDATA_PROD_MAKE_DIRS_COMMAND}
+cd ${USER_YCF_PUBLIC_HTML_DIR}
+	for adir in ${MODULE_DIR_TREE}
+	do
+		#echo Preparing user development module directory ${USER_YCF_PUBLIC_HTML_DIR}/${adir}
+		if [ ! -d ${USER_YCF_PUBLIC_HTML_DIR}/${adir} ]
+		then
+			mkdir ${USER_YCF_PUBLIC_HTML_DIR}/${adir}
+		fi
+	done
+cd $SAVE_MY_DIR
+
+cd ${WEBDATA_COPY_TO_PROD_DIR}
+	for adir in ${MODULE_DIR_TREE}
+	do
+		#echo Preparing production module directory ${WEBDATA_COPY_TO_PROD_DIR}/${adir}
+		if [ ! -d ${WEBDATA_COPY_TO_PROD_DIR}/${adir} ]
+		then
+			mkdir ${WEBDATA_COPY_TO_PROD_DIR}/${adir}
+		fi
+	done
+cd $SAVE_MY_DIR
