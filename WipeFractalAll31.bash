@@ -1,41 +1,42 @@
 #!/bin/bash
-pushd $MCF_HOME
+pushd $YCF_HOME
+export CLIARGS="42-alpha13-ebf-202610172230"
 for aprojdir in \
-	server.markhome.ycf.v3_1.busmodel.busmodelappsetup \
-	server.markhome.ycf.v3_1.busmodel.busmodeljavafx \
-	server.markhome.ycf.v3_1.busmodel.busmodelsaxramldr \
-	server.markhome.ycf.v3_1.busmodel.busmodelramtest \
-	server.markhome.ycf.v3_1.busmodel.busmodelram \
-	server.markhome.ycf.v3_1.busmodel.busmodelsaxloader \
-	server.markhome.ycf.v3_1.busmodel.busmodeljpatest \
-	server.markhome.ycf.v3_1.busmodel.busmodeljpa \
-	server.markhome.ycf.v3_1.busmodel.busmodel \
-	server.markhome.ycf.v3_1.busmodel.busmodelprot \
-	server.markhome.ycf.v3_1.busmodel.busmodelpub \
+	server.markhome.ycf/ycf-busmodelappsetup \
+	server.markhome.ycf/ycf-busmodeljavafx \
+	server.markhome.ycf/ycf-busmodelsaxramldr \
+	server.markhome.ycf/ycf-busmodelramtest \
+	server.markhome.ycf/ycf-busmodelram \
+	server.markhome.ycf/ycf-busmodelsaxloader \
+	server.markhome.ycf/ycf-busmodeljpatest \
+	server.markhome.ycf/ycf-busmodeljpa \
+	server.markhome.ycf/ycf-busmodel \
+	server.markhome.ycf/ycf-busmodelprot \
+	server.markhome.ycf/ycf-busmodelpub \
 	\
-	server.markhome.ycf.v3_1.intnet.intnetappsetup \
-	server.markhome.ycf.v3_1.intnet.intnetjavafx \
-	server.markhome.ycf.v3_1.intnet.intnetsaxramldr \
-	server.markhome.ycf.v3_1.intnet.intnetramtest \
-	server.markhome.ycf.v3_1.intnet.intnetram \
-	server.markhome.ycf.v3_1.intnet.intnetsaxloader \
-	server.markhome.ycf.v3_1.intnet.intnetjpatest \
-	server.markhome.ycf.v3_1.intnet.intnetjpa \
-	server.markhome.ycf.v3_1.intnet.intnet \
-	server.markhome.ycf.v3_1.intnet.intnetprot \
-	server.markhome.ycf.v3_1.intnet.intnetpub \
+	server.markhome.ycf/ycf-intnetappsetup \
+	server.markhome.ycf/ycf-intnetjavafx \
+	server.markhome.ycf/ycf-intnetsaxramldr \
+	server.markhome.ycf/ycf-intnetramtest \
+	server.markhome.ycf/ycf-intnetram \
+	server.markhome.ycf/ycf-intnetsaxloader \
+	server.markhome.ycf/ycf-intnetjpatest \
+	server.markhome.ycf/ycf-intnetjpa \
+	server.markhome.ycf/ycf-intnet \
+	server.markhome.ycf/ycf-intnetprot \
+	server.markhome.ycf/ycf-intnetpub \
 	\
-	server.markhome.ycf.v3_1.secure.secureappsetup \
-	server.markhome.ycf.v3_1.secure.securejavafx \
-	server.markhome.ycf.v3_1.secure.securesaxramldr \
-	server.markhome.ycf.v3_1.secure.secureramtest \
-	server.markhome.ycf.v3_1.secure.secureram \
-	server.markhome.ycf.v3_1.secure.securesaxloader \
-	server.markhome.ycf.v3_1.secure.securejpatest \
-	server.markhome.ycf.v3_1.secure.securejpa \
-	server.markhome.ycf.v3_1.secure.secure \
-	server.markhome.ycf.v3_1.secure.secureprot \
-	server.markhome.ycf.v3_1.secure.securepub
+	server.markhome.ycf/ycf-secureappsetup \
+	server.markhome.ycf/ycf-securejavafx \
+	server.markhome.ycf/ycf-securesaxramldr \
+	server.markhome.ycf/ycf-secureramtest \
+	server.markhome.ycf/ycf-secureram \
+	server.markhome.ycf/ycf-securesaxloader \
+	server.markhome.ycf/ycf-securejpatest \
+	server.markhome.ycf/ycf-securejpa \
+	server.markhome.ycf/ycf-secure \
+	server.markhome.ycf/ycf-secureprot \
+	server.markhome.ycf/ycf-securepub
 do
 	rm -Rf ${aprojdir}/src/main/java/server ${aprojdir}/src/main/resources/*
 done

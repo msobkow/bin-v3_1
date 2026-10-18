@@ -1,7 +1,7 @@
 #!/bin/bash
-if [ "$MCF_HOME" != "" ]; then
-	if [ -d "$MCF_HOME" ]; then
-		cd "$MCF_HOME"
+if [ "$YCF_HOME" != "" ]; then
+	if [ -d "$YCF_HOME" ]; then
+		cd "$YCF_HOME"
 			for adir in *
 			do
 				pushd $adir

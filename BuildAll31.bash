@@ -1,110 +1,79 @@
 #!/bin/bash
 export CLIARGS="$*"
 if [ "$CLIARGS" == "" ]; then
-	export CLIARGS="42"
+	export CLIARGS="42-alpha13-ebf-202610172230"
 fi
-pushd $MCF_HOME
+pushd $YCF_HOME
 export MavenStatus="$?"
-#	server.markhome.ycf.v3_1.secure.securesaxramldr \
-#	server.markhome.ycf.v3_1.intnet.intnetsaxramldr \
-#	server.markhome.ycf.v3_1.busmodel.busmodelsaxramldr
-#	server.markhome.ycf.v3_1.secure.securecustfx \
-#	server.markhome.ycf.v3_1.intnet.intnetcustfx \
-#	server.markhome.ycf.v3_1.busmodel.busmodelcustfx \
+
+#	server.markhome.ycf/ycf-securesaxramldr
+#	server.markhome.ycf/ycf-intnetsaxramldr
+#	server.markhome.ycf/ycf-busmodelsaxramldr
+#	server.markhome.ycf/ycf-securecustfx
+#	server.markhome.ycf/ycf-intnetcustfx
+#	server.markhome.ycf/ycf-busmodelcustfx
+
 for aprojdir in \
 	server.markhome.ycf \
 	server.markhome.ycf.v3_1 \
-	\
-	server.markhome.ycf.v3_1.\
-	server.markhome.ycf.v3_1.dbutil \
-	server.markhome.ycf.v3_1.dbtest \
-	server.markhome.ycf.v3_1.javafx \
-	\
-	server.markhome.ycf.v3_1.secure.securepub \
-	server.markhome.ycf.v3_1.secure.secureprot \
-	server.markhome.ycf.v3_1.secure.secure \
-	server.markhome.ycf.v3_1.secure.securejpa \
-	server.markhome.ycf.v3_1.secure.securejpatest \
-	server.markhome.ycf.v3_1.secure.securesaxloader \
-	server.markhome.ycf.v3_1.secure.securejavafx \
-	server.markhome.ycf.v3_1.secure.secureram \
-	server.markhome.ycf.v3_1.secure.secureramtest \
-	\
-	server.markhome.ycf.v3_1.intnet.intnetpub \
-	server.markhome.ycf.v3_1.intnet.intnetprot \
-	server.markhome.ycf.v3_1.intnet.intnet \
-	server.markhome.ycf.v3_1.intnet.intnetjpa \
-	server.markhome.ycf.v3_1.intnet.intnetjpatest \
-	server.markhome.ycf.v3_1.intnet.intnetsaxloader \
-	server.markhome.ycf.v3_1.intnet.intnetjavafx \
-	server.markhome.ycf.v3_1.intnet.intnetram \
-	server.markhome.ycf.v3_1.intnet.intnetramtest \
-	\
-	server.markhome.ycf.v3_1.busmodel.busmodelpub \
-	server.markhome.ycf.v3_1.busmodel.busmodelprot \
-	server.markhome.ycf.v3_1.busmodel.busmodel \
-	server.markhome.ycf.v3_1.busmodel.busmodeljpa \
-	server.markhome.ycf.v3_1.busmodel.busmodeljpatest \
-	server.markhome.ycf.v3_1.busmodel.busmodelsaxloader \
-	server.markhome.ycf.v3_1.busmodel.busmodeljavafx \
-	server.markhome.ycf.v3_1.busmodel.busmodelram \
-	server.markhome.ycf.v3_1.busmodel.busmodelramtest
+	server.markhome.ycf.v3_1.secure \
+	server.markhome.ycf.v3_1.intnet \
+	server.markhome.ycf.v3_1.busmodel
 do
 	if [ "$MavenStatus" == "0" ]
 	then
 		if [ -a ${aprojdir}/pom.xml ]
 		then
 			pushd ${aprojdir}
-				mvn -DbuildString="$CLIARGS" -U deploy
+				mvn -DbuildString="$CLIARGS" -U install
 				export MavenStatus="$?"
 				if [ ! "$MavenStatus" == "0" ]
 				then
-					echo "ERROR: 'mvn -DbuildString=\"$CLIARGS\" -U deploy' for ${aprojdir} returned status ${MavenStatus} - build aborted"
+					echo "ERROR: 'mvn -DbuildString=\"$CLIARGS\" -U install' for ${aprojdir} returned status ${MavenStatus} - build aborted"
 				fi
 			popd
 		fi
 	fi
 done
 if [ "$MavenStatus" == "0" ]; then
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.42/server.markhome.ycf.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1/3.1.42/server.markhome.ycf.v3_1.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.dbutil/3.1.42/server.markhome.ycf.v3_1.dbutil-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.dbtest/3.1.42/server.markhome.ycf.v3_1.dbtest-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.javafx/3.1.42/server.markhome.ycf.v3_1.javafx-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.secure.securepub/3.1.42/server.markhome.ycf.v3_1.secure.securepub-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.secure.secureprot/3.1.42/server.markhome.ycf.v3_1.secure.secureprot-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.secure.secure/3.1.42/server.markhome.ycf.v3_1.secure.secure-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.secure.securejpa/3.1.42/server.markhome.ycf.v3_1.secure.securejpa-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.secure.securejpatest/3.1.42/server.markhome.ycf.v3_1.secure.securejpatest-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.secure.securesaxloader/3.1.42/server.markhome.ycf.v3_1.secure.securesaxloader-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.secure.secureram/3.1.42/server.markhome.ycf.v3_1.secure.secureram-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.secure.secureramtest/3.1.42/server.markhome.ycf.v3_1.secure.secureramtest-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.secure.securesaxramldr/3.1.42/server.markhome.ycf.v3_1.secure.securesaxramldr-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.secure.securejavafx/3.1.42/server.markhome.ycf.v3_1.secure.securejavafx-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.secure.securecustfx/3.1.42/server.markhome.ycf.v3_1.secure.securecustfx-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.intnet.intnetpub/3.1.42/server.markhome.ycf.v3_1.intnet.intnetpub-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.intnet.intnetprot/3.1.42/server.markhome.ycf.v3_1.intnet.intnetprot-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.intnet.intnet/3.1.42/server.markhome.ycf.v3_1.intnet.intnet-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.intnet.intnetjpa/3.1.42/server.markhome.ycf.v3_1.intnet.intnetjpa-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.intnet.intnetjpatest/3.1.42/server.markhome.ycf.v3_1.intnet.intnetjpatest-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.intnet.intnetsaxloader/3.1.42/server.markhome.ycf.v3_1.intnet.intnetsaxloader-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.intnet.intnetram/3.1.42/server.markhome.ycf.v3_1.intnet.intnetram-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.intnet.intnetramtest/3.1.42/server.markhome.ycf.v3_1.intnet.intnetramtest-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.intnet.intnetsaxramldr/3.1.42/server.markhome.ycf.v3_1.intnet.intnetsaxramldr-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.intnet.intnetjavafx/3.1.42/server.markhome.ycf.v3_1.intnet.intnetjavafx-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.intnet.intnetcustfx/3.1.42/server.markhome.ycf.v3_1.intnet.intnetcustfx-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.busmodel.busmodelpub/3.1.42/server.markhome.ycf.v3_1.busmodel.busmodelpub-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.busmodel.busmodelprot/3.1.42/server.markhome.ycf.v3_1.busmodel.busmodelprot-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.busmodel.busmodel/3.1.42/server.markhome.ycf.v3_1.busmodel.busmodel-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.busmodel.busmodeljpa/3.1.42/server.markhome.ycf.v3_1.busmodel.busmodeljpa-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.busmodel.busmodeljpatest/3.1.42/server.markhome.ycf.v3_1.busmodel.busmodeljpatest-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.busmodel.busmodelsaxloader/3.1.42/server.markhome.ycf.v3_1.busmodel.busmodelsaxloader-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.busmodel.busmodelram/3.1.42/server.markhome.ycf.v3_1.busmodel.busmodelram-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.busmodel.busmodelramtest/3.1.42/server.markhome.ycf.v3_1.busmodel.busmodelramtest-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.busmodel.busmodelsaxramldr/3.1.42/server.markhome.ycf.v3_1.busmodel.busmodelsaxramldr-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.busmodel.busmodeljavafx/3.1.42/server.markhome.ycf.v3_1.busmodel.busmodeljavafx-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.busmodel.busmodelcustfx/3.1.42/server.markhome.ycf.v3_1.busmodel.busmodelcustfx-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $MCF_HOME/server.markhome.ycf.v3_1.*/target/*-spring-boot.jar $MCF_HOME/bin-v3_1
-	echo "SUCCESS: All 3.1 Java builds completed successfully"
+	echo "SUCCESS: All 3.1 Java builds completed successfully - installing jars to bin-v3_1/lib ..."
+	if [ ! -d $YCF_HOME/bin-v3_1/lib ]
+	then
+		mkdir -v $YCF_HOME/bin-v3_1/lib
+	fi
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-core.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-dbtest.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-javafx.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-securepub.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-secureprot.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-secure.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-securejpa.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-securejpatest.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-securesaxloader.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-securejavafx.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-secureram.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-secureramtest.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-intnetpub.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-intnetprot.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-intnet.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-intnetjpa.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-intnetjpatest.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-intnetsaxloader.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-intnetjavafx.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-intnetram.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-intnetramtest.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-busmodelpub.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-busmodelprot.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-busmodel.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-busmodeljpa.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-busmodeljpatest.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-busmodelsaxloader.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-busmodeljavafx.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-busmodelram.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-busmodelramtest.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/*-spring-boot.jar $YCF_HOME/bin-v3_1/lib/
+	echo "DONE: Installation of 3.1..${CLIARGS} jars to bin-v3_1/lib completed successfully"
 fi
 popd

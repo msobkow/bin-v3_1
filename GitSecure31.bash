@@ -19,18 +19,18 @@ if [ "$4" != "" ]; then
 else
 	unset CLIARG4
 fi
-cd $MCF_HOME
+cd $YCF_HOME
 for aprojdir in \
-	server.markhome.ycf.v3_1.secure.securepub \
-	server.markhome.ycf.v3_1.secure.secureprot \
-	server.markhome.ycf.v3_1.secure.secure \
-	server.markhome.ycf.v3_1.secure.securejpa \
-	server.markhome.ycf.v3_1.secure.securejpatest \
-	server.markhome.ycf.v3_1.secure.securesaxloader \
-	server.markhome.ycf.v3_1.secure.securejavafx \
-	server.markhome.ycf.v3_1.secure.securecustfx \
-	server.markhome.ycf.v3_1.secure.secureram \
-	server.markhome.ycf.v3_1.secure.secureramtest
+	server.markhome.ycf/ycf-securepub \
+	server.markhome.ycf/ycf-secureprot \
+	server.markhome.ycf/ycf-secure \
+	server.markhome.ycf/ycf-securejpa \
+	server.markhome.ycf/ycf-securejpatest \
+	server.markhome.ycf/ycf-securesaxloader \
+	server.markhome.ycf/ycf-securejavafx \
+	server.markhome.ycf/ycf-securecustfx \
+	server.markhome.ycf/ycf-secureram \
+	server.markhome.ycf/ycf-secureramtest
 do
 	pushd ${aprojdir}
 	export CMD="git $CLIARG1 $CLIARG2 $CLIARG3 $CLIARG4 $CLIARG5"

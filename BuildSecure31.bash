@@ -1,29 +1,25 @@
 #!/bin/bash
 export CLIARGS="$*"
 if [ "$CLIARGS" == "" ]; then
-	export CLIARGS="42"
+	export CLIARGS="42-alpha13-ebf-202610172230"
 fi
-pushd $MCF_HOME
+pushd $YCF_HOME
 let MavenStatus=0
+echo "INFO: Building 3.1.${CLIARGS} Java jars for YCF Secure ..."
 for aprojdir in \
 	server.markhome.ycf \
-	server.markhome.ycf.v3_1 \
-	commons-lang3-js \
-	commons-io-js \
-	commons-codec-js \
-	junit-framework-js \
-	jena-js \
-	server.markhome.ycf.v3_1.cflib \
-	server.markhome.ycf.v3_1.cflib.dbutil \
-	server.markhome.ycf.v3_1.secure.securepub \
-	server.markhome.ycf.v3_1.secure.secureprot \
-	server.markhome.ycf.v3_1.secure.secure \
-	server.markhome.ycf.v3_1.secure.securejpa \
-	server.markhome.ycf.v3_1.secure.securejpatest \
-	server.markhome.ycf.v3_1.secure.securesaxloader \
-	server.markhome.ycf.v3_1.secure.securejavafx \
-	server.markhome.ycf.v3_1.secure.secureram \
-	server.markhome.ycf.v3_1.secure.secureramtest
+	server.markhome.ycf/ycf-v3_1 \
+	server.markhome.ycf/ycf-v3_1-core \
+	server.markhome.ycf/ycf-v3_1-dbutil \
+	server.markhome.ycf/ycf-v3_1-securepub \
+	server.markhome.ycf/ycf-v3_1-secureprot \
+	server.markhome.ycf/ycf-v3_1-secure \
+	server.markhome.ycf/ycf-v3_1-securejpa \
+	server.markhome.ycf/ycf-v3_1-securejpatest \
+	server.markhome.ycf/ycf-v3_1-securesaxloader \
+	server.markhome.ycf/ycf-v3_1-securejavafx \
+	server.markhome.ycf/ycf-v3_1-secureram \
+	server.markhome.ycf/ycf-v3_1-secureramtest
 do
 	if [ "$MavenStatus" == "0" ]; then
 		if [ -a ${aprojdir}/pom.xml ]; then
@@ -38,22 +34,23 @@ do
 	fi
 done
 if [ "$MavenStatus" == "0" ]; then
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.cflib/3.1.42/server.markhome.ycf.v3_1.cflib-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.cflib.dbutil/3.1.42/server.markhome.ycf.v3_1.cflib.dbutil-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.cflib.dbtest/3.1.42/server.markhome.ycf.v3_1.cflib.dbtest-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.cflib.javafx/3.1.42/server.markhome.ycf.v3_1.cflib.javafx-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.secure.securepub/3.1.42/server.markhome.ycf.v3_1.secure.securepub-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.secure.secureprot/3.1.42/server.markhome.ycf.v3_1.secure.secureprot-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.secure.secure/3.1.42/server.markhome.ycf.v3_1.secure.secure-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.secure.securejpa/3.1.42/server.markhome.ycf.v3_1.secure.securejpa-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.secure.securejpatest/3.1.42/server.markhome.ycf.v3_1.secure.securejpatest-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.secure.securesaxloader/3.1.42/server.markhome.ycf.v3_1.secure.securesaxloader-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.secure.secureram/3.1.42/server.markhome.ycf.v3_1.secure.secureram-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.secure.secureramtest/3.1.42/server.markhome.ycf.v3_1.secure.secureramtest-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.secure.securesaxramldr/3.1.42/server.markhome.ycf.v3_1.secure.securesaxramldr-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.secure.securejavafx/3.1.42/server.markhome.ycf.v3_1.secure.securejavafx-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf.v3_1.secure.securecustfx/3.1.42/server.markhome.ycf.v3_1.secure.securecustfx-3.1.42.jar $MCF_HOME/bin-v3_1
-	cp -v $MCF_HOME/server.markhome.ycf.v3_1.secure*/target/*-spring-boot.jar $MCF_HOME/bin-v3_1
-	echo "SUCCESS: All 3.1 Java builds completed successfully"
-fi
-popd
+	echo "SUCCESS: All 3.1.${CLIARGS} Java builds for YCF Secure completed successfully - copying jars to bin-v3_1/lib ..."
+	if [ ! -d $YCF_HOME/bin-v3_1/lib ]
+	then
+		mkdir -v $YCF_HOME/bin-v3_1/lib
+	fi
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-core.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-dbtest.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-javafx.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-securepub.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-secureprot.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-secure.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-securejpa.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-securejpatest.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-securesaxloader.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-securejavafx.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-secureram.jar $YCF_HOME/bin-v3_1/lib/
+	cp -v $HOME/.m2/repository/server/markhome/ycf/v3_1/server.markhome.ycf/3.1.${CLIARGS}/ycf-v3_1-secureramtest.jar $YCF_HOME/bin-v3_1/lib/
+	echo "DONE: All 3.1 Java jars for YCF Secure 3.1.${CLIARGS} copied successfully."

@@ -1,5 +1,6 @@
 #!/bin/bash
-pushd $MCF_HOME
+pushd $YCF_HOME
+export CLIARGS="42-alpha13-ebf-202610172230"
 for aprojdir in \
 	server.markhome.ycf \
 	server.markhome.ycf.v3_1 \
